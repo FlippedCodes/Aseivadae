@@ -27,7 +27,7 @@ jobs:
 
 
       - name: Test Server
-        run: docker run hello-world
+        run: sudo docker run hello-world
       # # - name: Use Node.js ${{ matrix.node-version }}
       # #   uses: actions/setup-node@v2
       # #   with:
