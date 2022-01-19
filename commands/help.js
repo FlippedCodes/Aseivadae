@@ -14,17 +14,9 @@ module.exports.run = async (client, message, args, config) => {
       CMD.help.title,
       `\`${config.prefix}${CMD.help.name} ${CMD.help.usage || ''}\`
       ${CMD.help.desc}`,
-
       false,
     );
   });
-
-  // set help command
-  // embed
-  //   .addField(
-  //     lang.chat_command_help_embed_field_title({ prefix: config.prefix }),
-  //     lang.chat_command_help_embed_field_desc(), true,
-  //   );
   message.channel.send({ embed });
   return;
 };
