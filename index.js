@@ -8,9 +8,7 @@ const client = new Discord.Client({ disableEveryone: true });
 const fs = require('fs');
 // init correct config
 const inDev = fs.existsSync('./config/config.json');
-let config;
-if (inDev) config = require('./config/main_testing.json');
-else config = require('./config/main.json');
+let config = require('./config/main.json');
 
 // get language file
 require('./lang/SETUP_langFile');
@@ -25,9 +23,6 @@ config.setup.startupFunctions.forEach((FCN) => {
   let INIT = require(`./functions/${FCN}.js`);
   INIT.run(client, fs, config, inDev);
 });
-
-// create conenction to DB
-require('./database/SETUP_DBConnection');
 
 // Login the bot
 client.login(config.env.get('token'));

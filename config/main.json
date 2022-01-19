@@ -61,11 +61,7 @@
             "STARTUP_initFunctions",
             "STARTUP_envPrep"
         ],
-        "setupFunctions": [
-            "SETUP_roleRequest",
-            "SETUP_offlineStat",
-            "SETUP_status"
-        ]
+        "setupFunctions": [ "SETUP_status" ]
     },
     "checkin": {
         "reaction": {

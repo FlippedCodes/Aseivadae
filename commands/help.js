@@ -10,9 +10,13 @@ module.exports.run = async (client, message, args, config) => {
   // creating embed fields for every command
   client.commands.forEach((CMD) => {
     if (!CMD.help.title) return;
-    embed.addField(CMD.help.title,
+    embed.addField(
+      CMD.help.title,
       `\`${config.prefix}${CMD.help.name} ${CMD.help.usage || ''}\`
-      ${CMD.help.desc}`, false);
+      ${CMD.help.desc}`,
+
+      false,
+    );
   });
 
   // set help command

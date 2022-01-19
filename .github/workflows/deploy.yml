@@ -17,9 +17,6 @@ jobs:
     #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     env:
-      DB_PORT: ${{ secrets.DB_PORT }}
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      DB_PASSWORD_ROOT: ${{ secrets.DB_PASSWORD_ROOT }}
       DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
 
     steps:
