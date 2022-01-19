@@ -1,0 +1,11 @@
+{
+  "development": {
+    "username": "gurglebot",
+    "password": "***********",
+    "database": "gurglebot",
+    "host": "************",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "token": "*********************************************************"
+}

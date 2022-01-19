@@ -1,0 +1,36 @@
+{
+  "name": "gurglebot",
+  "version": "2.3.0",
+  "description": "Rewrite of the orginal mawbot for the TDM-Network.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlipperLP/gurglebot.git"
+  },
+  "keywords": [],
+  "author": "phil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlipperLP/gurglebot/issues"
+  },
+  "homepage": "https://github.com/FlipperLP/gurglebot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "handlebars": "^4.7.7",
+    "jsdom": "^16.6.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "pretty-ms": "^5.1.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sequelize": "^5.22.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
