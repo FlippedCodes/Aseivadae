@@ -8,7 +8,7 @@ const client = new Discord.Client({ disableEveryone: true });
 const fs = require('fs');
 // init correct config
 const inDev = fs.existsSync('./config/config.json');
-let config = require('./config/main.json');
+let config = require('./config.json');
 
 // create new collections in client and config
 client.functions = new Discord.Collection();
