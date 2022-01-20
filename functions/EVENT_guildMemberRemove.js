@@ -5,7 +5,7 @@ module.exports.run = async (client, member, config) => {
   const checkinChannel = await member.guild.channels.cache.find((channel) => channel.name === member.id);
   // delete checkin channel if existent
   if (checkinChannel) {
-    await client.functions.get('FUNC_transcriptChannel').run(checkinChannel, config);
+    // await client.functions.get('FUNC_transcriptChannel').run(checkinChannel, config);
     checkinChannel.delete();
   }
 };
