@@ -7,8 +7,9 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "GurgleBot",
-            "program": "${workspaceFolder}/index.js"
+            "name": "Aseivadae",
+            "program": "${workspaceFolder}/index.js",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
