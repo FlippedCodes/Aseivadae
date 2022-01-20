@@ -43,19 +43,6 @@ module.exports.run = async (client, reaction, user, config) => {
       await reaction.message.channel.delete();
       return;
 
-    case '🔍':
-      client.functions.get('CMD_nsfw_search').run(client, reaction.message, [null, reaction.message.author.id], config, MessageEmbed, null);
-      return;
-
-    case '❓':
-      messageFail(client, reaction.message.channel, 'Was unable to parse DoB to create entry.');
-      return;
-
-    case '✅':
-      messageSuccess(client, reaction.message.channel, 'DoB parsed successfully and nsfw entry got created');
-      client.functions.get('CMD_nsfw_search').run(client, reaction.message, [null, reaction.message.author.id], config, MessageEmbed, null);
-      return;
-
     default:
       return;
   }

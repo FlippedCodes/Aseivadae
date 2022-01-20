@@ -1,15 +1,11 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, config) => {
-  // non command function: disboard boost
-  // client.functions.get('FUNC_disboardBoost').run(client, message, config);
-
   // return if unwanted
   if (message.author.bot) return;
   if (message.channel.type === 'dm') return;
 
   // checking if staffmember
-  // TODO: foreach, with more roles
   if (message.member.roles.cache.find((role) => role.id === config.teamRole)) config.env.set('isTeam', true);
 
   // non command function: checkin complete questioning Reaction adding
