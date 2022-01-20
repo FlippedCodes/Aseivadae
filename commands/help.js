@@ -3,8 +3,6 @@ const { MessageEmbed } = require('discord.js');
 module.exports.run = async (client, message, args, config) => {
   // prepare title and user CMDs
   let embed = new MessageEmbed()
-    // .setTitle(lang.chat_command_help_embed_title())
-    // .setDescription(lang.chat_command_help_embed_desc())
     .setAuthor('How to uwse me:');
   if (message.channel.type !== 'dm') embed.setColor(message.member.displayColor);
   // creating embed fields for every command
@@ -24,5 +22,5 @@ module.exports.run = async (client, message, args, config) => {
 module.exports.help = {
   name: 'help',
   title: 'HALP',
-  desc: lang.chat_command_help_desc(),
+  desc: 'Displays the help of usable commands for the corrent user.',
 };
