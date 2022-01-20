@@ -1,22 +1,22 @@
 {
-  "name": "gurglebot",
-  "version": "2.3.0",
-  "description": "Rewrite of the orginal mawbot for the TDM-Network.",
+  "name": "aseivadae",
+  "version": "1.0.0",
+  "description": "Rewrite of the orginal mawbot for the TDM-Network and wartered down for other servers.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlipperLP/gurglebot.git"
+    "url": "git+https://github.com/FlippedCodes/Aseivadae.git"
   },
   "keywords": [],
   "author": "phil",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FlipperLP/gurglebot/issues"
+    "url": "https://github.com/FlippedCodes/Aseivadae/issues"
   },
-  "homepage": "https://github.com/FlipperLP/gurglebot#readme",
+  "homepage": "https://github.com/FlippedCodes/Aseivadae#readme",
   "dependencies": {
     "discord.js": "^12.3.1",
     "jsdom": "^16.6.0",
