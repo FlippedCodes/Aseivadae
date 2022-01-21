@@ -5,4 +5,4 @@ services:
       context: ./
     restart: always
     environment:
-      BotToken: ${DISCORD_BOT_TOKEN}
+      DCtoken: ${DISCORD_BOT_TOKEN}
