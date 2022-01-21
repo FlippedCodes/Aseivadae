@@ -13,7 +13,7 @@ async function messageFail(client, channel, body) {
   return result;
 }
 
-module.exports.run = async (client, reaction, user, config) => {
+module.exports.run = async (reaction, user) => {
   if (user.bot) return;
   if (reaction.message.channel.parentID !== config.checkin.categoryID) return;
   const member = await reaction.message.guild.members.fetch(user);

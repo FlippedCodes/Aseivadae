@@ -10,7 +10,7 @@ const dom = new JSDOM();
 
 const document = dom.window.document;
 
-module.exports.run = async (channel, config) => {
+module.exports.run = async (channel) => {
   let messageCollection = new discord.Collection();
   let channelMessages = await channel.messages.fetch({ limit: 100 }).catch((err) => console.log(err));
 

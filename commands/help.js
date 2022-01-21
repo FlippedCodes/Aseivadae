@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = async (client, message, args, config) => {
+module.exports.run = async (message, args) => {
   // prepare title and user CMDs
   let embed = new MessageEmbed()
     .setAuthor('How to uwse me:');

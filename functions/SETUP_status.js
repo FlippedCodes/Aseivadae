@@ -1,5 +1,5 @@
-module.exports.run = async (client, config) => {
-  if (!config.env.get('inDev')) {
+module.exports.run = async (client) => {
+  if (!inDev) {
     console.log(`[${module.exports.help.name}] Setting status...`);
   } else return console.log(`[${module.exports.help.name}] Bot is in debugging-mode and will post the bot status-message`);
   client.user.setStatus('online');

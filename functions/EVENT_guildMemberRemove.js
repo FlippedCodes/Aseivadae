@@ -1,4 +1,4 @@
-module.exports.run = async (client, member, config) => {
+module.exports.run = async (member) => {
   // check if user had roles | 1 beacuse @everyone is also a counted role
   if (member.roles.cache.size !== 1) return;
   // get checkin channel

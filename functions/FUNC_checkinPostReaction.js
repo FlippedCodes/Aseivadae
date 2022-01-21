@@ -2,7 +2,7 @@ const moment = require('moment');
 
 const errHander = (err) => { console.error('ERROR:', err); };
 
-async function getDate(channel, config) {
+async function getDate(channel) {
   // get all messages
   const messages = await channel.messages.fetch();
   // match date
@@ -14,7 +14,7 @@ async function getDate(channel, config) {
   return moment(rawDate, config.DoBchecking.dateFormats, true);
 }
 
-module.exports.run = async (client, message, config) => {
+module.exports.run = async (message) => {
   // check if team fore was pinged and if channel is a checkin channel
   if (message.mentions.has(config.teamRole)
   && message.channel.parentID === config.checkin.categoryID) {

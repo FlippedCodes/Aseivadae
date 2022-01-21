@@ -1,15 +1,15 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = async (client, message, config) => {
+module.exports.run = async (message) => {
   // return if unwanted
   if (message.author.bot) return;
   if (message.channel.type === 'dm') return;
 
   // checking if staffmember
-  if (message.member.roles.cache.find((role) => role.id === config.teamRole)) config.env.set('isTeam', true);
+  if (message.member.roles.cache.find((role) => role.id === config.teamRole)) config.set('isTeam', true);
 
   // non command function: checkin complete questioning Reaction adding
-  client.functions.get('FUNC_checkinPostReaction').run(client, message, config);
+  client.functions.get('FUNC_checkinPostReaction').run(message);
 
   // put comamnd in array
   const messageArray = message.content.split(/\s+/g);
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, config) => {
 
   // run cmd if existent
   if (cmd) {
-    cmd.run(client, message, args, config, MessageEmbed)
+    cmd.run(message, args, MessageEmbed)
       .catch(console.log);
   }
 };

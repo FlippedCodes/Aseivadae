@@ -25,7 +25,7 @@ function calcUserAge(user) {
   return Math.ceil(msDiff / (1000 * 60 * 60 * 24));
 }
 
-function createChannel(guild, user, config, topic) {
+function createChannel(guild, user, topic) {
   guild.channels.create(user.id, { type: 'text', topic, parent: config.checkin.categoryID })
     .then((channel) => channel.lockPermissions())
     .then((channel) => channel.createOverwrite(user, { VIEW_CHANNEL: true }))
@@ -33,7 +33,7 @@ function createChannel(guild, user, config, topic) {
     .catch(errHander);
 }
 
-module.exports.run = async (client, reaction, config) => {
+module.exports.run = async (reaction)=> {
   // check emoji and channel
   const configReaction = config.checkin.reaction;
   if (reaction.member.roles.length !== 0) return;
@@ -54,7 +54,7 @@ module.exports.run = async (client, reaction, config) => {
     Avatar: ${user.displayAvatarURL({ format: 'png', dynamic: true, size: 1024 })}
     Days since creation: ${dayDiff};
     Creation date: ${user.createdAt}`;
-    createChannel(guild, user, config, topic);
+    createChannel(guild, user, topic);
   }
   // remvove user reaction
   const reactionChannel = await guild.channels.cache.get(config.checkin.reaction.channel);

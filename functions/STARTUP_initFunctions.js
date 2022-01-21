@@ -1,4 +1,4 @@
-module.exports.run = async (client, fs, config) => {
+module.exports.run = async (fs) => {
   const functionsFolder = config.setup.moduleFolders.functionsFolder;
   // read directory with functions
   fs.readdir(`./${functionsFolder}`, (err, files) => {
@@ -11,12 +11,12 @@ module.exports.run = async (client, fs, config) => {
     // check if functions are there
     if (jsfiles.length <= 0) return console.log(`[${module.exports.help.name}] No function(s) to load!`);
 
-    if (config.env.get('inDev')) console.log(`[${module.exports.help.name}] Loading ${jsfiles.length} function(s)...`);
+    if (inDev) console.log(`[${module.exports.help.name}] Loading ${jsfiles.length} function(s)...`);
 
     // adding all functions
     jsfiles.forEach((f, i) => {
       let probs = require(`../${functionsFolder}/${f}`);
-      if (config.env.get('inDev')) console.log(`[${module.exports.help.name}]     ${i + 1}) Loaded: ${f}!`);
+      if (inDev) console.log(`[${module.exports.help.name}]     ${i + 1}) Loaded: ${f}!`);
       // adding function to collection
       client.functions.set(probs.help.name, probs);
     });
