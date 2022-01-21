@@ -2,15 +2,19 @@ const errHander = (err) => { console.error('ERROR:', err); };
 
 const welcomeMessage = (userID) => `
 Hey there <@!${userID}>! Welcome to TDM.
-Before we let you in im going to ask you some questions, before a staff member is going to let you in.
+Before we can continue im going to ask you some questions and a staff member is going to review them and let you in.
 
-:one: - How did you find our server?
-:two: - Are you on any other vore servers?
-:three: - Do you like vore and what is your favorite?
-:four: - What is your DoB date of birth? (Preferable in YYYY-MM-DD format)
-:five: - Please provide your ID as in <#496948681656893440> described.
+:one: - Please state your age.
+:two: - How do you act in a displeasing situation?
+:three: - Why do you want to join the server?
+:four: - What does kin mean to you?
+:five: - Do you understand your inner self, or just chose something that's close enough?
+:six: - Why do you consider yourself kin?
+:seven: - Do you know what "kin" means?
+:eight: - How long have you been kin and have you switched kin?
+:nine: - Do you understand your inner self, or just chose the closest thing?
 
-When you are done please ping/mention \`@Team\`, so we know that you are done and ready to be reviewd.
+When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewd.
 `;
 
 // calculate user creation
