@@ -14,16 +14,15 @@
     },
     "checkin": {
         "reaction": {
-            "channel": "496948681656893440",
-            "message": "496985167160672267",
+            "channel": "932052799779401749",
+            "message": "934140605733408788",
             "emoji": "👌"
         },
-        "categoryID": "750432209420156968",
+        "categoryID": "932415856514842706",
         "welcomeChannel": "496962434917990410",
-        "archiveChannel": "disabled",
+        "archiveChannel": "934144110451892224",
         "checkinRole": "932062131359207487"
     },
     "aboutText": "./config/about.txt",
-    "teamRole": "300661482830561281",
-    "info_channelID": "496948681656893440"
+    "teamRole": "932062876250804294"
 }
