@@ -29,7 +29,7 @@ module.exports.run = async (reaction, user) => {
       reaction.message.member.roles.add(config.checkin.checkinRole);
       // post welcome message
       const welcomeChannel = member.guild.channels.cache.get(config.checkin.welcomeChannel);
-      welcomeChannel.send(`${reaction.message.author}, you are checked-in now!\nYou can check out some roles in <#669278640667623434>!\nHave a great time on the server! :3`);
+      welcomeChannel.send(`${reaction.message.author}, you are checked-in now!\nYou can check out some roles in <#932122537763143700>!\nHave a great time on the server! :3`);
       await client.functions.get('FUNC_transcriptChannel').run(reaction.message.channel);
       // delete channel
       await reaction.message.channel.delete();
