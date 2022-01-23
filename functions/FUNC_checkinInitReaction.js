@@ -12,7 +12,6 @@ Before we can continue im going to ask you some questions and a staff member is 
 :six: - Why do you consider yourself kin?
 :seven: - Do you know what "kin" means?
 :eight: - How long have you been kin and have you switched kin?
-:nine: - Do you understand your inner self, or just chose the closest thing?
 
 When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewd.
 `;
