@@ -10,6 +10,18 @@ const fs = require('fs');
 global.inDev = process.env.NODE_ENV === 'development';
 global.config = require('./config.json');
 
+global.ERR = (err) => {
+  console.error('ERROR:', err);
+  if (DEBUG) return;
+  const { MessageEmbed } = require('discord.js');
+  const embed = new MessageEmbed()
+    .setAuthor({ name: `Error: '${err.message}'` })
+    .setDescription(`STACKTRACE:\n\`\`\`${err.stack.slice(0, 4000)}\`\`\``)
+    .setColor(16449540);
+  client.channels.cache.get(config.logChannel).send({ embeds: [embed] });
+  return;
+};
+
 // create new collections in client and config
 client.functions = new Discord.Collection();
 client.commands = new Discord.Collection();
@@ -54,3 +66,4 @@ client.on('raw', async (packet) => {
 // logging errors
 client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
+process.on('uncaughtException', (ERR));
