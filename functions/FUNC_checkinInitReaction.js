@@ -1,17 +1,13 @@
 const errHander = (err) => { console.error('ERROR:', err); };
 
 const welcomeMessage = (userID) => `
-Hey there <@!${userID}>! Welcome to TDM.
+Hey there <@!${userID}>! Welcome to The Commune of Dragons.
 Before we can continue im going to ask you some questions and a staff member is going to review them and let you in.
 
 :one: - Please state your age.
 :two: - How do you act in a displeasing situation?
-:three: - Why do you want to join the server?
-:four: - What does kin mean to you?
-:five: - Do you understand your inner self, or just chose something that's close enough?
-:six: - Why do you consider yourself kin?
-:seven: - Do you know what "kin" means?
-:eight: - How long have you been kin and have you switched kin?
+:three: - How long have you been kin and have you switched kin?
+:four: - Have you read the rules and agree?
 
 When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewd.
 `;
