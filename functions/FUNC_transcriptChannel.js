@@ -68,7 +68,7 @@ module.exports.run = async (channel) => {
       messageContainer.appendChild(codeNode);
     } else {
       let msgNode = document.createElement('span');
-      let textNode = document.createTextNode(`${msg.content}\n`);
+      let textNode = document.createTextNode(`\n${msg.content}\n`);
       msgNode.append(textNode);
       messageContainer.appendChild(msgNode);
     }
