@@ -80,10 +80,6 @@ client.on('messageReactionAdd', (reaction, user) => {
   client.functions.get('EVENT_messageReactionAdd').run(reaction, user).catch(ERR);
 });
 
-client.on('messageReactionRemove', (reaction, user) => {
-  client.functions.get('EVENT_messageReactionRemove').run(client, reaction, user, config);
-});
-
 // trigger on reaction with raw package
 client.on('raw', async (packet) => {
   if (packet.t === 'MESSAGE_REACTION_ADD' && packet.d.guild_id) {

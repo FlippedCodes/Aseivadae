@@ -12,22 +12,22 @@ const document = dom.window.document;
 
 module.exports.run = async (channel) => {
   let messageCollection = new Collection();
-  let channelMessages = await channel.messages.fetch({ limit: 100 }).catch((err) => console.log(err));
+  let channelMessages = await channel.messages.fetch({ limit: 100 }).catch(ERR);
 
   messageCollection = messageCollection.concat(channelMessages);
 
   while (channelMessages.size === 100) {
     const lastMessageId = channelMessages.lastKey();
     // eslint-disable-next-line no-await-in-loop
-    channelMessages = await channel.messages.fetch({ limit: 100, before: lastMessageId }).catch((err) => console.log(err));
+    channelMessages = await channel.messages.fetch({ limit: 100, before: lastMessageId }).catch(ERR);
     if (channelMessages) messageCollection = messageCollection.concat(channelMessages);
   }
   const allMessages = Array.from(messageCollection.values()).reverse();
 
-  const data = await fs.readFile('./assets/transcript/template.html', 'utf8').catch((err) => console.log(err));
+  const data = await fs.readFile('./assets/transcript/template.html', 'utf8').catch(ERR);
   if (!data) return console.error('Template file could not be loaded!');
   // create file
-  await fs.writeFile('./cache/index.html', data).catch((err) => console.log(err));
+  await fs.writeFile('./cache/index.html', data).catch(ERR);
   // add guild title
   const guildElement = document.createElement('div');
   const guildText = document.createTextNode(channel.name);
@@ -36,7 +36,7 @@ module.exports.run = async (channel) => {
   guildImg.setAttribute('width', '150');
   guildElement.appendChild(guildImg);
   guildElement.appendChild(guildText);
-  await fs.appendFile('./cache/index.html', guildElement.outerHTML).catch((err) => console.log(err));
+  await fs.appendFile('./cache/index.html', guildElement.outerHTML).catch(ERR);
 
   // forEach all messages
   allMessages.forEach(async (msg) => {
@@ -73,7 +73,7 @@ module.exports.run = async (channel) => {
       messageContainer.appendChild(msgNode);
     }
     parentContainer.appendChild(messageContainer);
-    await fs.appendFile('./cache/index.html', parentContainer.outerHTML).catch((err) => console.log(err));
+    await fs.appendFile('./cache/index.html', parentContainer.outerHTML).catch(ERR);
   });
   const archive = channel.guild.channels.cache.get(config.checkin.archiveChannel);
   archive.send({
@@ -82,7 +82,7 @@ module.exports.run = async (channel) => {
       attachment: './cache/index.html',
       name: `${channel.name}.html`,
     }],
-  }).catch((err) => console.log(err));
+  }).catch(ERR);
 };
 
 module.exports.data = {

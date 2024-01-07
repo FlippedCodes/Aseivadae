@@ -1,14 +1,13 @@
 const welcomeMessage = (userID) => `
-Hey there <@!${userID}>! Welcome to TDM.
-Before we let you in im going to ask you some questions, before a staff member is going to let you in.
+Hey there <@!${userID}>! Welcome to The Commune of Dragons.
+Before we can continue im going to ask you some questions and a staff member is going to review them and let you in.
 
-:one: - How did you find our server?
-:two: - Are you on any other vore servers?
-:three: - Do you like vore and what is your favorite?
-:four: - What is your DoB date of birth? (Preferable in YYYY-MM-DD format)
-:five: - Please provide your ID as in <#496948681656893440> described.
+:one: - Please state your age.
+:two: - How do you act in a displeasing situation?
+:three: - How long have you been kin and have you switched kin?
+:four: - Have you read the rules and agree?
 
-When you are done please ping/mention \`@Team\`, so we know that you are done and ready to be reviewd.
+When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewed.
 `;
 
 // calculate user creation

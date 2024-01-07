@@ -11,4 +11,5 @@ module.exports.run = async (interaction) => {
 
 module.exports.data = new CmdBuilder()
   .setName('checkin')
-  .setDescription('Shows the checkin menu without pinging team.');
+  .setDescription('Shows the checkin menu without pinging team.')
+  .setDMPermission(false);

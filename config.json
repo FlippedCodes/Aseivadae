@@ -1,16 +1,11 @@
 {
     "name": "Aseivadae",
+    "teamRole": "932062876250804294",
+    "guildId": "928873675250364447",
     "prefix": "a?",
     "setup": {
-        "moduleFolders": {
-            "functionsFolder": "functions",
-            "commandsFolder": "commands"
-        },
-        "startupFunctions": [
-            "STARTUP_initCommands",
-            "STARTUP_initFunctions"
-        ],
-        "setupFunctions": [ "SETUP_status" ]
+        "logStatusChannel": "934144110451892224",
+        "setupFunctions": [ "SETUP_status", "SETUP_initCommands" ]
     },
     "checkin": {
         "reaction": {
@@ -23,7 +18,5 @@
         "archiveChannel": "934144110451892224",
         "checkinRole": "932062131359207487"
     },
-    "aboutText": "./config/about.txt",
-    "teamRole": "932062876250804294",
     "logChannel": "933524154479689778"
 }
