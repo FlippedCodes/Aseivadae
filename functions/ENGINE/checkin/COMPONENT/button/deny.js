@@ -15,7 +15,7 @@ module.exports.run = async (interaction) => {
 
   await client.functions.get('ENGINE_checkin_transcriptChannel').run(checkinChannel);
   // delete channel
-  await checkinChannel.delete();
+  // await checkinChannel.delete();
 };
 
 module.exports.data = {

@@ -24,8 +24,6 @@ module.exports.run = async (channel) => {
   }
   const allMessages = Array.from(messageCollection.values()).reverse();
 
-  console.log(allMessages);
-
   const data = await fs.readFile('./assets/transcript/template.html', 'utf8').catch(ERR);
   if (!data) return console.error('Template file could not be loaded!');
   // create file
