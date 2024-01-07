@@ -21,24 +21,13 @@ function calcUserAge(user) {
 }
 
 async function createChannel(guild, user, topic) {
-  const channel = await guild.channels.create({
-    name: user.id,
-    topic,
-    parent: config.checkin.categoryID,
-    // permissionOverwrites: [{
-    //   id: user.id,
-    //   allow: [PermissionsBitField.Flags.ViewChannel],
-    // }],
-  }).catch(ERR);
+  const channel = await guild.channels.create({ name: user.id, topic, parent: config.checkin.categoryID }).catch(ERR);
   await channel.lockPermissions().catch(ERR);
+  // needs to be delayed, because API limit causes permissions to be set in reverse order.
   setTimeout(async () => {
     await channel.permissionOverwrites.edit(user.id, { ViewChannel: true }).catch(ERR);
     await channel.send(welcomeMessage(user.id)).catch(ERR);
   }, 3 * 1000);
-  // .then((channel) => channel.lockPermissions())
-  // .then((channel) => channel.permissionOverwrites.edit(user.id, { ViewChannel: true }))
-  // .then(async (channel) => channel.send(welcomeMessage(user.id)))
-  // .catch(ERR);
 }
 
 module.exports.run = async (reaction) => {
