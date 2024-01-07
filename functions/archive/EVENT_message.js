@@ -11,7 +11,7 @@ module.exports.run = async (message) => {
   // non command function: checkin complete questioning Reaction adding
   client.functions.get('FUNC_checkinPostReaction').run(message);
 
-  // put comamnd in array
+  // put command in array
   const messageArray = message.content.split(/\s+/g);
   const command = messageArray[0];
   const args = messageArray.slice(1);

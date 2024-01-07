@@ -9,7 +9,7 @@ Before we can continue im going to ask you some questions and a staff member is 
 :three: - How long have you been kin and have you switched kin?
 :four: - Have you read the rules and agree?
 
-When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewd.
+When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewed.
 `;
 
 // calculate user creation
@@ -28,7 +28,7 @@ function createChannel(guild, user, topic) {
     .catch(errHander);
 }
 
-module.exports.run = async (reaction)=> {
+module.exports.run = async (reaction) => {
   // check emoji and channel
   const configReaction = config.checkin.reaction;
   if (reaction.member.roles.length !== 0) return;
@@ -51,7 +51,7 @@ module.exports.run = async (reaction)=> {
     Creation date: ${user.createdAt}`;
     createChannel(guild, user, topic);
   }
-  // remvove user reaction
+  // remove user reaction
   const reactionChannel = await guild.channels.cache.get(config.checkin.reaction.channel);
   const reactionMessage = await reactionChannel.messages.fetch(config.checkin.reaction.message);
   const initalReaction = await reactionMessage.reactions.cache.get(config.checkin.reaction.emoji);
