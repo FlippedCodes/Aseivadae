@@ -106,4 +106,4 @@ dist
 # custom
 test_token.json
 cache/*
-!cache/dummyfile
+!cache/.gitkeep
