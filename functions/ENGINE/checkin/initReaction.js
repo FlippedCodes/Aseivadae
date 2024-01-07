@@ -1,3 +1,5 @@
+const { PermissionsBitField } = require('discord.js');
+
 const welcomeMessage = (userID) => `
 Hey there <@!${userID}>! Welcome to The Commune of Dragons.
 Before we can continue im going to ask you some questions and a staff member is going to review them and let you in.
@@ -19,7 +21,15 @@ function calcUserAge(user) {
 }
 
 async function createChannel(guild, user, topic) {
-  const channel = await guild.channels.create({ name: user.id, topic, parent: config.checkin.categoryID }).catch(ERR);
+  const channel = await guild.channels.create({
+    name: user.id,
+    topic,
+    parent: config.checkin.categoryID,
+    permissionOverwrites: [{
+      id: user.id,
+      allow: [PermissionsBitField.Flags.ViewChannel],
+    }],
+  }).catch(ERR);
   await channel.lockPermissions().catch(ERR);
   await channel.permissionOverwrites.edit(user.id, { ViewChannel: true }).catch(ERR);
   await channel.send(welcomeMessage(user.id)).catch(ERR);
