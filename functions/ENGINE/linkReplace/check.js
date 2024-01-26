@@ -28,6 +28,8 @@ module.exports.run = async (message) => {
   }));
   const notFound = foundList.every((entry) => entry.notFound);
   if (notFound) return;
+
+  message.delete();
   replaceStuff(message);
 };
 
