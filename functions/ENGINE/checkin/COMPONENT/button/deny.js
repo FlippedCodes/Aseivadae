@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 
 const embed = new EmbedBuilder()
   .setTitle('Check-in declined')
-  .setDescription('It seems like your check-in got declined. Please get in touch with the team.')
+  .setDescription('It seems like your check-in got declined or you exceed your stay with not replying back.')
   .setColor('Red');
 
 module.exports.run = async (interaction) => {
@@ -11,10 +11,12 @@ module.exports.run = async (interaction) => {
 
   const checkinChannel = interaction.channel;
   const userID = checkinChannel.name;
-  const user = await client.users.fetch(userID);
+  const user = await interaction.guild.members.fetch(userID);
   user.send({ embeds: [embed] }).catch((e) => null);
 
   await client.functions.get('ENGINE_checkin_transcriptChannel').run(checkinChannel);
+
+  await user.kick('Checkin Denied');
   // delete channel
   await checkinChannel.delete();
 };
