@@ -17,8 +17,7 @@ module.exports.run = async (interaction) => {
   await client.functions.get('ENGINE_checkin_transcriptChannel').run(checkinChannel);
 
   await user.kick('Checkin Denied');
-  // delete channel
-  await checkinChannel.delete();
+  // channel deletion is handled in member remove event
 };
 
 module.exports.data = {
