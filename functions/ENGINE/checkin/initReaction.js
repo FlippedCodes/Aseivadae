@@ -5,9 +5,8 @@ Hey there <@!${userID}>! Welcome to The Commune of Dragons.
 Before we can continue im going to ask you some questions and a staff member is going to review them and let you in.
 
 :one: - Please state your age.
-:two: - How do you act in a displeasing situation?
-:three: - How long have you been kin and have you switched kin?
-:four: - Have you read the rules and agree?
+:two: - What is Otherkin/Therian to you?
+:three: - How long have you been kin, and has your kin ever changed?
 
 When you are done please ping/mention \`@Staff\`, so we know that you are done and ready to be reviewed.
 `;
