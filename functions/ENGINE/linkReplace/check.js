@@ -29,7 +29,8 @@ module.exports.run = async (message) => {
   const notFound = foundList.every((entry) => entry.notFound);
   if (notFound) return;
 
-  message.delete();
+  // TODO: Link replacement broken, asked owner, if it should be fixed or left disabled
+  // message.delete();
   replaceStuff(message);
 };
 
